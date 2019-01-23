@@ -12,14 +12,16 @@ import { TitleComponent } from './title/title.component';
 import { TodoEntryComponent } from './todo-entry/todo-entry.component';
 
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatTableModule, MatPaginatorModule, MatSortModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AngularDatagridComponent } from './angular-datagrid/angular-datagrid.component';
 
 @NgModule({
   declarations: [
     DataGrid,
     TitleComponent,
-    TodoEntryComponent
+    TodoEntryComponent,
+    AngularDatagridComponent
   ],
   imports: [
     BrowserModule,
@@ -28,11 +30,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     NgbModule.forRoot(),
     NoopAnimationsModule,
     MatButtonModule, MatCheckboxModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     TodoService
   ],
-  bootstrap: [TitleComponent, DataGrid]
+  bootstrap: [TitleComponent, AngularDatagridComponent]
 })
 export class AppModule { }
