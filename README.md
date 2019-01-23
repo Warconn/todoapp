@@ -7,9 +7,5 @@ Need to run the API # AND the front end code.
 3. todoapp-angular directory ->  ng serve
 4. Open localhost:4200
 
-
-
-Front End Branch
-
 This is a test run of [Tutorial](https://medium.com/netscape/mean-app-tutorial-with-angular-4-part-1-18691663ea96)
 
