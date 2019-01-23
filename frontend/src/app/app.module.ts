@@ -11,6 +11,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TitleComponent } from './title/title.component';
 import { TodoEntryComponent } from './todo-entry/todo-entry.component';
 
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     DataGrid,
@@ -21,7 +24,9 @@ import { TodoEntryComponent } from './todo-entry/todo-entry.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    NoopAnimationsModule,
+    MatButtonModule, MatCheckboxModule
   ],
   providers: [
     TodoService
