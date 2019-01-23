@@ -9,11 +9,13 @@ import { DataGrid } from './datagrid/app.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TitleComponent } from './title/title.component';
+import { TodoEntryComponent } from './todo-entry/todo-entry.component';
 
 @NgModule({
   declarations: [
     DataGrid,
-    TitleComponent
+    TitleComponent,
+    TodoEntryComponent
   ],
   imports: [
     BrowserModule,

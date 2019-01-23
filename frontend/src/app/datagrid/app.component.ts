@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class DataGrid implements OnInit {
 
   constructor(
@@ -27,13 +28,8 @@ export class DataGrid implements OnInit {
       })
   }
 
-
-  create() {
-    this.todoService.createTodo(this.newTodo)
-      .subscribe((res) => {
-        this.todosList.push(res.data)
-        this.newTodo = new ToDo()
-      })
+  receiveMessage($event) {
+    this.todosList = $event
   }
 
   editTodo(todo: ToDo) {
