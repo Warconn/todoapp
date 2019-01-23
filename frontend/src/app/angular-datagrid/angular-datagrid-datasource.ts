@@ -66,8 +66,9 @@ export class AngularDatagridDataSource extends DataSource<ToDo> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.title, b.title, isAsc);
-        case 'id': return compare(+a._id, +b._id, isAsc);
+        case 'title': return compare(a.title, b.title, isAsc);
+        case 'description': return compare(+a.description, +b.description, isAsc);
+        case 'status': return compare(+a.status, +b.status, isAsc);
         default: return 0;
       }
     });

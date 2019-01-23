@@ -19,7 +19,7 @@ export class AngularDatagridComponent implements OnInit {
   ) { }
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['_id', 'title', ];
+  displayedColumns = ['title', 'description', 'status'];
 
   ngOnInit(): void {
     this.todoService.getToDos()
