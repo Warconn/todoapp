@@ -13,6 +13,7 @@ import { TodoEntryComponent } from './todo-entry/todo-entry.component';
 
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     FormsModule,
     NgbModule.forRoot(),
     NoopAnimationsModule,
-    MatButtonModule, MatCheckboxModule
+    MatButtonModule, MatCheckboxModule,
+    MatFormFieldModule
   ],
   providers: [
     TodoService
