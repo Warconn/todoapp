@@ -1,6 +1,6 @@
 import { Response } from '@angular/http';
-import { TodoService } from '../../services/todo.service';
-import ToDo from '../../models/todo.model';
+import { TodoService } from '../services/todo.service';
+import ToDo from '../models/todo.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

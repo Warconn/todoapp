@@ -5,13 +5,15 @@ import { TodoService } from './services/todo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { DataGrid } from './components/datagrid/app.component';
+import { DataGrid } from './datagrid/app.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   declarations: [
-    DataGrid
+    DataGrid,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
