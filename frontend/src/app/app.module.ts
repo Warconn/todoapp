@@ -2,7 +2,7 @@
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TodoService } from './services/todo.service';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { DataGrid } from './datagrid/app.component';
@@ -24,6 +24,6 @@ import { TitleComponent } from './title/title.component';
   providers: [
     TodoService
   ],
-  bootstrap: [DataGrid]
+  bootstrap: [TitleComponent, DataGrid]
 })
 export class AppModule { }
