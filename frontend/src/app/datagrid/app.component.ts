@@ -29,7 +29,7 @@ export class DataGrid implements OnInit {
   }
 
   receiveMessage($event) {
-    this.todosList = $event
+    this.todosList.push($event)
   }
 
   editTodo(todo: ToDo) {

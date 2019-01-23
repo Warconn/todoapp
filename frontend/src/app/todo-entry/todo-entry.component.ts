@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TodoService } from '../services/todo.service';
 import ToDo from '../models/todo.model';
 
@@ -23,9 +23,11 @@ export class TodoEntryComponent implements OnInit {
   create() {
     this.todoService.createTodo(this.newTodo)
       .subscribe((res) => {
-        //this.todosList.push(res.data)
+        this.messageEvent.emit(res.data)
         this.newTodo = new ToDo()
       })
   }
+
+  @Output() messageEvent = new EventEmitter<string>();
 
 }
