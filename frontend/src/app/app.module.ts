@@ -5,13 +5,13 @@ import { TodoService } from './services/todo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { DataGrid } from './components/datagrid/app.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent
+    DataGrid
   ],
   imports: [
     BrowserModule,
@@ -22,6 +22,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   providers: [
     TodoService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [DataGrid]
 })
 export class AppModule { }
