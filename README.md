@@ -1,4 +1,4 @@
-# todoapp
+# ToDo App with Angular Front End
 
 Need to run the API # AND the front end code.
 
