@@ -1,6 +1,6 @@
 
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { TodoService } from './services/todo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
