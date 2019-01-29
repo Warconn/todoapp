@@ -69,6 +69,7 @@ export class AngularDatagridDataSource extends DataSource<ToDo> {
         case 'title': return compare(a.title, b.title, isAsc);
         case 'description': return compare(+a.description, +b.description, isAsc);
         case 'status': return compare(+a.status, +b.status, isAsc);
+        case 'date': return compare(+a.date, +b.date, isAsc);
         default: return 0;
       }
     });
