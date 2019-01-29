@@ -45,6 +45,6 @@ import {MatIconModule} from '@angular/material/icon';
   providers: [
     TodoService
   ],
-  bootstrap: [TitleComponent, AngularDatagridComponent]
+  bootstrap: [TitleComponent, AngularDatagridComponent, TodoEntryComponent]
 })
 export class AppModule { }
