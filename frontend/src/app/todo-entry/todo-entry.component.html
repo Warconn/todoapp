@@ -1,10 +1,10 @@
 <form>  
-  <mat-form-field >
-    <input matInput  name="title" id="title" [(ngModel)]="newTodo.title" placeholder="Title" >
+  <mat-form-field class="third"> 
+    <input matInput name="title" id="title" [(ngModel)]="newTodo.title" placeholder="Title" >
   </mat-form-field>
-  <mat-form-field >
+  <mat-form-field class="third">
     <input matInput name="description" id="description" [(ngModel)]="newTodo.description" placeholder="Description" id="description">
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" class="btn btn-primary" (click)="create()">Add</button>
+  </mat-form-field > 
+  <button class="third" mat-raised-button color="primary" type="submit" class="btn btn-primary" (click)="create()">Add</button>
 </form>
 
