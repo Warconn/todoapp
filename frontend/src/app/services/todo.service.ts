@@ -19,6 +19,8 @@ export class TodoService {
 
 
   createTodo(todo: ToDo): Observable<any>{
+    console.log("Posting new todo:");
+    console.log(todo);
     return this.http.post(`${this.todoUrl}`, todo);
   }
 

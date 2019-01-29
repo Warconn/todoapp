@@ -8,51 +8,44 @@ _this = this
 exports.getTodos = async function(query, page, limit){
 
     // Options setup for the mongoose paginate
-
     var options = {
         page,
         limit
     }
-    
-    // Try Catch the awaited promise to handle the error 
-    
+ 
+    // Try Catch the awaited promise to handle the error    
     try {
         var todos = await ToDo.paginate(query, options)
         
         // Return the todod list that was retured by the mongoose promise
-
         return todos;
-
     } catch (e) {
-
         // return a Error message describing the reason 
-
         throw Error('Error while Paginating Todos')
     }
 }
 
 exports.createTodo = async function(todo){
-    
+    console.log("service -> todo", todo)
     // Creating a new Mongoose Object by using the new keyword
-
     var newTodo = new ToDo({
         title: todo.title,
         description: todo.description,
-        date: new Date(),
+        date: todo.date,
         status: todo.status
     })
+    console.log("service -> newTodo", newTodo)
 
     try{
 
         // Saving the Todo 
-
         var savedTodo = await newTodo.save()
+        console.log("service -> savedToDo", savedTodo)
 
         return savedTodo;
     }catch(e){
       
         // return a Error message describing the reason     
-
         throw Error("Error while Creating Todo")
     }
 }
@@ -81,9 +74,7 @@ exports.updateTodo = async function(todo){
     oldTodo.title = todo.title
     oldTodo.description = todo.description
     oldTodo.status = todo.status
-
-
-    console.log(oldTodo)
+    oldTodo.date = todo.date
 
     try{
         var savedTodo = await oldTodo.save()

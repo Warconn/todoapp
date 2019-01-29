@@ -17,7 +17,6 @@ export class TodoEntryComponent implements OnInit {
 
   public newTodo: ToDo = new ToDo()
 
-
   ngOnInit() {
   }
 

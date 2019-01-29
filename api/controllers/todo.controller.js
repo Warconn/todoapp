@@ -14,7 +14,7 @@ exports.getTodos = async function(req, res, next){
     // Check the existence of the query parameters, If the exists doesn't exists assign a default value
     
     var page = req.query.page ? req.query.page : 1
-    var limit = req.query.limit ? req.query.limit : 10; 
+    var limit = req.query.limit ? req.query.limit : 10000; 
 
     try{
     
@@ -35,18 +35,17 @@ exports.getTodos = async function(req, res, next){
 
 exports.createTodo = async function(req, res, next){
 
-    // Req.Body contains the form submit values.
-
+    console.log("req body", req.body)
     var todo = {
         title: req.body.title,
         description: req.body.description,
+        date: new Date(req.body.date),
         status: req.body.status
     }
 
+    console.log("todo", todo)
+  
     try{
-        
-        // Calling the Service function with the new object from the Request Body
-    
         var createdTodo = await TodoService.createTodo(todo)
         return res.status(201).json({status: 201, data: createdTodo, message: "Succesfully Created ToDo"})
     }catch(e){
@@ -73,6 +72,7 @@ exports.updateTodo = async function(req, res, next){
         id,
         title: req.body.title ? req.body.title : null,
         description: req.body.description ? req.body.description : null,
+        date: req.body.date ? req.body.date : new Date(),
         status: req.body.status ? req.body.status : null
     }
 
