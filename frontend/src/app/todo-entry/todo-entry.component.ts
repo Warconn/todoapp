@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TodoService } from '../services/todo.service';
 import ToDo from '../models/todo.model';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-todo-entry',

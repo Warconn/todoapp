@@ -33,6 +33,7 @@ export class AngularDatagridComponent implements OnInit {
 
   receiveMessage($event) {
     this.dataSource.data.push($event)
+    this.ngOnInit();
   }
 
   editTodo(todo: ToDo) {

@@ -30,3 +30,8 @@
       [pageSizeOptions]="[25, 50, 100, 250]">
   </mat-paginator>
 </div>
+
+<div class="mat-elevation-z8">
+
+<app-todo-entry (messageEvent)="receiveMessage($event)"></app-todo-entry>
+</div>

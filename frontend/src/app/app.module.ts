@@ -15,6 +15,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatTableModule, MatPaginatorModule, MatSortModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AngularDatagridComponent } from './angular-datagrid/angular-datagrid.component';
+import {MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AngularDatagridComponent } from './angular-datagrid/angular-datagrid.co
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatInputModule
   ],
   providers: [
     TodoService
