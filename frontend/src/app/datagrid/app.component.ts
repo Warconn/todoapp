@@ -1,6 +1,6 @@
 import { Response } from '@angular/http';
-import { TodoService } from './services/todo.service';
-import ToDo from './models/todo.model';
+import { TodoService } from '../services/todo.service';
+import ToDo from '../models/todo.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+
+export class DataGrid implements OnInit {
 
   constructor(
     private todoService: TodoService
@@ -27,13 +28,8 @@ export class AppComponent implements OnInit {
       })
   }
 
-
-  create() {
-    this.todoService.createTodo(this.newTodo)
-      .subscribe((res) => {
-        this.todosList.push(res.data)
-        this.newTodo = new ToDo()
-      })
+  receiveMessage($event) {
+    this.todosList.push($event)
   }
 
   editTodo(todo: ToDo) {
