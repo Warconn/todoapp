@@ -6,6 +6,14 @@
     <input matInput name="description" id="description" [(ngModel)]="newTodo.description" placeholder="Description" id="description">
   </mat-form-field > 
 
+  <mat-form-field class="input-width">
+      <input matInput name="date" id="date" [matDatepicker]="picker"  [(ngModel)]="newTodo.date" placeholder="Due Date">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
   <button mat-raised-button color="primary" type="submit" class="btn btn-primary input-width" (click)="create()">Add</button>
 </form>
 
