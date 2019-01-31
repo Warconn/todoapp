@@ -12,7 +12,6 @@ import { DataService } from "../services/data.service";
 
 export class TodoEntryComponent implements OnInit {
   
-  message:string;
   public newTodo: ToDo = new ToDo()
 
   constructor(
@@ -21,16 +20,15 @@ export class TodoEntryComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataService.currentMessage.subscribe(message => this.message = message)
   }
 
   create() {
     this.todoService.createTodo(this.newTodo).subscribe((res) => 
     { 
-      console.log("Message being sent:", res.data)
-      this.newTodo = new ToDo()
+      this.dataService.changeData(res.data);
+      console.log("Message being sent:", res.data);
+      this.newTodo = new ToDo();
     })
 
-    this.dataService.changeMessage("Hello from Sibling")
   }
 }

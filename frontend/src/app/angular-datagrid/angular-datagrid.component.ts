@@ -16,7 +16,7 @@ export class AngularDatagridComponent implements OnInit {
   dataSource: AngularDatagridDataSource;
   editTodos: ToDo[] = [];
   displayedColumns = ['title', 'description', 'date', 'status'];
-  message:string;
+  newToDo:ToDo;
 
   constructor(
     private todoService: TodoService,
@@ -24,10 +24,10 @@ export class AngularDatagridComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.dataService.currentMessage.subscribe(message => 
+    this.dataService.currentMessage.subscribe(data => 
       {
-        this.message = message;
-        console.log("datagrid recieved message:", message);
+        this.newToDo = data;
+        console.log("datagrid recieved data:", data);
       })
 
     this.todoService.getToDos().subscribe(todos => 
