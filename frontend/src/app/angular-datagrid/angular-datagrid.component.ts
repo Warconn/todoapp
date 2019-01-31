@@ -3,6 +3,7 @@ import { MatPaginator, MatSort } from '@angular/material';
 import { AngularDatagridDataSource } from './angular-datagrid-datasource';
 import { TodoService } from '../services/todo.service';
 import ToDo from '../models/todo.model';
+import { DataService } from "../services/data.service";
 
 @Component({
   selector: 'app-angular-datagrid',
@@ -13,29 +14,29 @@ export class AngularDatagridComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: AngularDatagridDataSource;
+  editTodos: ToDo[] = [];
+  displayedColumns = ['title', 'description', 'date', 'status'];
+  message:string;
 
   constructor(
-    private todoService: TodoService
+    private todoService: TodoService,
+    private dataService: DataService
   ) { }
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['title', 'description', 'date', 'status'];
-
   ngOnInit(): void {
-    this.todoService.getToDos()
-      .subscribe(todos => {
+    this.dataService.currentMessage.subscribe(message => 
+      {
+        this.message = message;
+        console.log("datagrid recieved message:", message);
+      })
+
+    this.todoService.getToDos().subscribe(todos => 
+      {
         this.dataSource = new AngularDatagridDataSource(this.paginator, this.sort, todos);
-        console.log(todos)
+        console.log("ToDo's Retrieved: ", todos)
       })
   } 
   
-  editTodos: ToDo[] = [];
-
-  receiveMessage($event) {
-    this.dataSource.data.push($event)
-    this.ngOnInit();
-  }
-
   editTodo(todo: ToDo) {
     console.log(todo)
     if(this.dataSource.data.includes(todo)){
@@ -75,8 +76,5 @@ export class AngularDatagridComponent implements OnInit {
     })
   }
 
-
   title = 'app';
-
-
 }
