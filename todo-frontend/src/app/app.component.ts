@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-frontend';
+  todoArray=[]
+
+  addTodo(value){
+    this.todoArray.push(value)
+    console.log(value + " was added to array")
+    console.log(this.todoArray)
+  }
+
 }
